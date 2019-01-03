@@ -29,68 +29,6 @@ Array [
 ]
 `;
 
-exports[`parses code followed by newlines 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "one sentance",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "const hello = 'world';
-function() {
-  return hello;
-}",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "code",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "two sentance",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
 exports[`code mark 1`] = `
 Array [
   Object {
@@ -425,88 +363,6 @@ Array [
 ]
 `;
 
-exports[`parses headings followed by newlines 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "a paragraph",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "Heading",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "heading2",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "another paragraph",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`ignores empty link 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "empty",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
 exports[`inserted mark 1`] = `
 Array [
   Object {
@@ -661,143 +517,117 @@ function() {
 ]
 `;
 
-exports[`parses double nested todo list items 1`] = `
+exports[`parses code followed by newlines 1`] = `
 Array [
   Object {
     "data": Object {},
     "isVoid": false,
     "nodes": Array [
       Object {
-        "data": Object {
-          "checked": true,
-        },
-        "isVoid": false,
-        "nodes": Array [
+        "leaves": Array [
           Object {
-            "data": Object {},
-            "isVoid": false,
-            "nodes": Array [
-              Object {
-                "leaves": Array [
-                  Object {
-                    "marks": Array [],
-                    "object": "leaf",
-                    "text": "checked",
-                  },
-                ],
-                "object": "text",
-              },
-            ],
-            "object": "block",
-            "type": "paragraph",
-          },
-          Object {
-            "data": Object {},
-            "isVoid": false,
-            "nodes": Array [
-              Object {
-                "data": Object {
-                  "checked": false,
-                },
-                "isVoid": false,
-                "nodes": Array [
-                  Object {
-                    "data": Object {},
-                    "isVoid": false,
-                    "nodes": Array [
-                      Object {
-                        "leaves": Array [
-                          Object {
-                            "marks": Array [],
-                            "object": "leaf",
-                            "text": "empty",
-                          },
-                        ],
-                        "object": "text",
-                      },
-                    ],
-                    "object": "block",
-                    "type": "paragraph",
-                  },
-                ],
-                "object": "block",
-                "type": "list-item",
-              },
-              Object {
-                "data": Object {
-                  "checked": true,
-                },
-                "isVoid": false,
-                "nodes": Array [
-                  Object {
-                    "data": Object {},
-                    "isVoid": false,
-                    "nodes": Array [
-                      Object {
-                        "leaves": Array [
-                          Object {
-                            "marks": Array [],
-                            "object": "leaf",
-                            "text": "checked",
-                          },
-                        ],
-                        "object": "text",
-                      },
-                    ],
-                    "object": "block",
-                    "type": "paragraph",
-                  },
-                ],
-                "object": "block",
-                "type": "list-item",
-              },
-            ],
-            "object": "block",
-            "type": "todo-list",
+            "marks": Array [],
+            "object": "leaf",
+            "text": "one sentance",
           },
         ],
-        "object": "block",
-        "type": "list-item",
+        "object": "text",
       },
     ],
     "object": "block",
-    "type": "todo-list",
+    "type": "paragraph",
   },
   Object {
     "data": Object {},
     "isVoid": false,
     "nodes": Array [
       Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "const hello = 'world';
+function() {
+  return hello;
+}",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "code",
+  },
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "two sentance",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`parses empty link 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "",
+          },
+        ],
+        "object": "text",
+      },
+      Object {
         "data": Object {
-          "checked": false,
+          "href": "",
         },
         "isVoid": false,
         "nodes": Array [
           Object {
-            "data": Object {},
-            "isVoid": false,
-            "nodes": Array [
+            "leaves": Array [
               Object {
-                "leaves": Array [
-                  Object {
-                    "marks": Array [],
-                    "object": "leaf",
-                    "text": "three",
-                  },
-                ],
-                "object": "text",
+                "marks": Array [],
+                "object": "leaf",
+                "text": "empty",
               },
             ],
-            "object": "block",
-            "type": "paragraph",
+            "object": "text",
           },
         ],
-        "object": "block",
-        "type": "list-item",
+        "object": "inline",
+        "type": "link",
+      },
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "",
+          },
+        ],
+        "object": "text",
       },
     ],
     "object": "block",
-    "type": "todo-list",
+    "type": "paragraph",
   },
 ]
 `;
@@ -1061,6 +891,65 @@ Array [
     ],
     "object": "block",
     "type": "heading6",
+  },
+]
+`;
+
+exports[`parses headings followed by newlines 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "a paragraph",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "Heading",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "heading2",
+  },
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "another paragraph",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
   },
 ]
 `;
@@ -1819,107 +1708,26 @@ Array [
 ]
 `;
 
-exports[`parses nested todo list items 1`] = `
+exports[`parses one paragraph 1`] = `
 Array [
   Object {
     "data": Object {},
     "isVoid": false,
     "nodes": Array [
       Object {
-        "data": Object {
-          "checked": false,
-        },
-        "isVoid": false,
-        "nodes": Array [
+        "leaves": Array [
           Object {
-            "data": Object {},
-            "isVoid": false,
-            "nodes": Array [
-              Object {
-                "leaves": Array [
-                  Object {
-                    "marks": Array [],
-                    "object": "leaf",
-                    "text": "todo",
-                  },
-                ],
-                "object": "text",
-              },
-            ],
-            "object": "block",
-            "type": "paragraph",
-          },
-          Object {
-            "data": Object {},
-            "isVoid": false,
-            "nodes": Array [
-              Object {
-                "data": Object {
-                  "checked": false,
-                },
-                "isVoid": false,
-                "nodes": Array [
-                  Object {
-                    "data": Object {},
-                    "isVoid": false,
-                    "nodes": Array [
-                      Object {
-                        "leaves": Array [
-                          Object {
-                            "marks": Array [],
-                            "object": "leaf",
-                            "text": "nested",
-                          },
-                        ],
-                        "object": "text",
-                      },
-                    ],
-                    "object": "block",
-                    "type": "paragraph",
-                  },
-                ],
-                "object": "block",
-                "type": "list-item",
-              },
-              Object {
-                "data": Object {
-                  "checked": false,
-                },
-                "isVoid": false,
-                "nodes": Array [
-                  Object {
-                    "data": Object {},
-                    "isVoid": false,
-                    "nodes": Array [
-                      Object {
-                        "leaves": Array [
-                          Object {
-                            "marks": Array [],
-                            "object": "leaf",
-                            "text": "deep",
-                          },
-                        ],
-                        "object": "text",
-                      },
-                    ],
-                    "object": "block",
-                    "type": "paragraph",
-                  },
-                ],
-                "object": "block",
-                "type": "list-item",
-              },
-            ],
-            "object": "block",
-            "type": "todo-list",
+            "marks": Array [],
+            "object": "leaf",
+            "text": "This is the first sentance
+This is the second sentance",
           },
         ],
-        "object": "block",
-        "type": "list-item",
+        "object": "text",
       },
     ],
     "object": "block",
-    "type": "todo-list",
+    "type": "paragraph",
   },
 ]
 `;
@@ -2270,6 +2078,47 @@ Array [
 ]
 `;
 
+exports[`parses quote followed by newlines 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "this is a quote",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "block-quote",
+  },
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "this is a paragraph",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
 exports[`parses tables 1`] = `
 Array [
   Object {
@@ -2555,372 +2404,6 @@ Array [
 ]
 `;
 
-exports[`parses todo list items 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "data": Object {
-          "checked": false,
-        },
-        "isVoid": false,
-        "nodes": Array [
-          Object {
-            "data": Object {},
-            "isVoid": false,
-            "nodes": Array [
-              Object {
-                "leaves": Array [
-                  Object {
-                    "marks": Array [],
-                    "object": "leaf",
-                    "text": "todo",
-                  },
-                ],
-                "object": "text",
-              },
-            ],
-            "object": "block",
-            "type": "paragraph",
-          },
-        ],
-        "object": "block",
-        "type": "list-item",
-      },
-      Object {
-        "data": Object {
-          "checked": true,
-        },
-        "isVoid": false,
-        "nodes": Array [
-          Object {
-            "data": Object {},
-            "isVoid": false,
-            "nodes": Array [
-              Object {
-                "leaves": Array [
-                  Object {
-                    "marks": Array [],
-                    "object": "leaf",
-                    "text": "done",
-                  },
-                ],
-                "object": "text",
-              },
-            ],
-            "object": "block",
-            "type": "paragraph",
-          },
-        ],
-        "object": "block",
-        "type": "list-item",
-      },
-    ],
-    "object": "block",
-    "type": "todo-list",
-  },
-]
-`;
-
-exports[`parses todo list items with marks 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "data": Object {
-          "checked": true,
-        },
-        "isVoid": false,
-        "nodes": Array [
-          Object {
-            "data": Object {},
-            "isVoid": false,
-            "nodes": Array [
-              Object {
-                "leaves": Array [
-                  Object {
-                    "marks": Array [
-                      Object {
-                        "data": Object {},
-                        "object": "mark",
-                        "type": "deleted",
-                      },
-                    ],
-                    "object": "leaf",
-                    "text": "done",
-                  },
-                ],
-                "object": "text",
-              },
-            ],
-            "object": "block",
-            "type": "paragraph",
-          },
-        ],
-        "object": "block",
-        "type": "list-item",
-      },
-      Object {
-        "data": Object {
-          "checked": true,
-        },
-        "isVoid": false,
-        "nodes": Array [
-          Object {
-            "data": Object {},
-            "isVoid": false,
-            "nodes": Array [
-              Object {
-                "leaves": Array [
-                  Object {
-                    "marks": Array [],
-                    "object": "leaf",
-                    "text": "more ",
-                  },
-                  Object {
-                    "marks": Array [
-                      Object {
-                        "data": Object {},
-                        "object": "mark",
-                        "type": "bold",
-                      },
-                    ],
-                    "object": "leaf",
-                    "text": "done",
-                  },
-                ],
-                "object": "text",
-              },
-            ],
-            "object": "block",
-            "type": "paragraph",
-          },
-        ],
-        "object": "block",
-        "type": "list-item",
-      },
-    ],
-    "object": "block",
-    "type": "todo-list",
-  },
-]
-`;
-
-exports[`parses one paragraph 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "This is the first sentance
-This is the second sentance",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`parses two paragraphs 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "This is the first sentance",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "This is the second sentance",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`parses two paragraphs 2`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "This is the first sentance",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "This is the second sentance",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`parses whitespace string 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`parses quote followed by newlines 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "this is a quote",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "block-quote",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "this is a paragraph",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`quotes do not get combined 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "this is a quote",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "block-quote",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "this is a different quote",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "block-quote",
-  },
-]
-`;
-
 exports[`parses tables followed by newlines 1`] = `
 Array [
   Object {
@@ -3084,6 +2567,152 @@ Array [
     ],
     "object": "block",
     "type": "paragraph",
+  },
+]
+`;
+
+exports[`parses two paragraphs 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "This is the first sentance",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "This is the second sentance",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`parses two paragraphs seperated by multiple blank lines 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "This is the first sentance",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "This is the second sentance",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`parses whitespace string 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`quotes do not get combined 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "this is a quote",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "block-quote",
+  },
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "this is a different quote",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "block-quote",
   },
 ]
 `;

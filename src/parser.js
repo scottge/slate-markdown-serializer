@@ -57,14 +57,14 @@ var block = {
   newline: /^\n+/,
   code: /^( {4}[^\n]+\n*)+/,
   fences: noop,
-  hr: /^( *[-*_]){3,} *(?:\n|$)/,
-  heading: /^ *(#{1,6}) *([^\n]+?) *#* *(?:\n|$)/,
+  hr: /^( *[-*_]){3,} *(?:\n+|$)/,
+  heading: /^ *(#{1,6}) *([^\n]+?) *#* *(?:\n+|$)/,
   nptable: noop,
-  lheading: /^([^\n]+)\n *(=|-){2,} *(?:\n|$)/,
-  blockquote: /^( *>[^\n]+(\n(?!def)[^\n])*(?:\n|$))+/,
-  list: /^( *)(bull) [\s\S]+?(?:hr|def|\n(?! )(?!\1bull )\n|\s*$)/,
-  def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +["(]([^\n]+)[")])? *(?:\n|$)/,
-  paragraph: /^((?:[^\n]+(?!hr|heading|lheading|blockquote|def))+)(?:\n|$)/,
+  lheading: /^([^\n]+)\n *(=|-){2,} *(?:\n+|$)/,
+  blockquote: /^( *>[^\n]+(\n(?!list|hr|heading|def)[^\n]+)*)+(?:\n+|$)/,
+  list: /^( *)(bull) [\s\S]+?(?:hr|def|\n{2,}(?! )(?!\1bull )\n*|\s*$)/,
+  def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +["(]([^\n]+)[")])? *(?:\n+|$)/,
+  paragraph: /^((?:[^\n]+\n?(?!hr|heading|lheading|blockquote|def))+)(?:\n+|$)/,
   text: /^[^\n]+/,
 }
 
@@ -77,15 +77,20 @@ block.list = replace(block.list)(/bull/g, block.bullet)(
   '\\n+(?=\\1?(?:[-*_] *){3,}(?:\\n+|$))'
 )('def', '\\n+(?=' + block.def.source + ')')()
 
-block.blockquote = replace(block.blockquote)('def', block.def)()
+block.blockquote = replace(block.blockquote)
+  ('list', block.list)
+  ('hr', block.hr)
+  ('heading', block.heading)
+  ('def', block.def)
+  ()
 
-block.paragraph = replace(block.paragraph)('hr', block.hr)(
-  'heading',
-  block.heading
-)('lheading', block.lheading)('blockquote', block.blockquote)(
-  'def',
-  block.def
-)()
+block.paragraph = replace(block.paragraph)
+  ('hr', block.hr)
+  ('heading', block.heading)
+  ('lheading', block.lheading)
+  ('blockquote', block.blockquote)
+  ('def', block.def)
+  ()
 
 /**
  * Normal Block Grammar
@@ -98,9 +103,9 @@ block.normal = assign({}, block)
  */
 
 block.gfm = assign({}, block.normal, {
-  fences: /^ *(`{3,}|~{3,})[ \.]*(\S+)? *\n([\s\S]+?)\s*\1 *(?:\n|$)/,
+  fences: /^ *(`{3,}|~{3,})[ \.]*(\S+)? *\n([\s\S]+?)\s*\1 *(?:\n+|$)/,
   paragraph: /^/,
-  heading: /^ *(#{1,6}) +([^\n]+?) *#* *(?:\n{1,2}|$)/,
+  heading: /^ *(#{1,6}) +([^\n]+?) *#* *(?:\n+|$)/,
 })
 
 block.gfm.paragraph = replace(block.paragraph)(
@@ -117,8 +122,8 @@ block.gfm.paragraph = replace(block.paragraph)(
  */
 
 block.tables = assign({}, block.gfm, {
-  nptable: /^ *(\S.*\|.*)\n *([-:]+ *\|[-| :]*)\n((?:.*\|.*(?:\n|$))*)/,
-  table: /^ *\|(.+)\n *\|( *[-:]+[-| :]*)\n((?: *\|.*(?:\n|$))*)/,
+  nptable: /^ *(\S.*\|.*)\n *([-:]+ *\|[-| :]*)\n((?:.*\|.*(?:\n|$))*)(?:\n*|$)/,
+  table: /^ *\|(.+)\n *\|( *[-:]+[-| :]*)\n((?: *\|.*(?:\n|$))*)(?:\n*|$)/,
 })
 
 /**
@@ -193,13 +198,10 @@ Lexer.prototype.token = function(src, top, bq) {
       src = src.substring(cap[0].length)
       const newlines = cap[0].length
 
-      if (top) {
-        for (let i = 0; i < newlines; i++) {
-          this.tokens.push({
-            type: 'paragraph',
-            text: '',
-          })
-        }
+      if (newlines > 1) {
+        this.tokens.push({
+          type: 'space',
+        })
       }
     }
 
@@ -228,11 +230,6 @@ Lexer.prototype.token = function(src, top, bq) {
     // heading
     if ((cap = this.rules.heading.exec(src))) {
       src = src.substring(cap[0].length)
-
-      const last = this.tokens[this.tokens.length - 1]
-      if (last && last.type === 'paragraph' && last.text === '') {
-        this.tokens.splice(-1, 1)
-      }
 
       this.tokens.push({
         type: 'heading',
@@ -446,12 +443,7 @@ Lexer.prototype.token = function(src, top, bq) {
         type: 'paragraph',
         text: endsWithNewline ? cap[1].slice(0, -1) : cap[1],
       })
-      if (endsWithNewline) {
-        this.tokens.push({
-          type: 'paragraph',
-          text: '',
-        })
-      }
+
       continue
     }
 

@@ -32,7 +32,7 @@ This is the second sentance
   expect(getNodes(text)).toMatchSnapshot()
 })
 
-test('parses two paragraphs', () => {
+test('parses two paragraphs seperated by multiple blank lines', () => {
   const text = `
 This is the first sentance
 
@@ -270,42 +270,6 @@ a new paragraph
   expect(getNodes(text)).toMatchSnapshot()
 })
 
-test('parses todo list items', () => {
-  const text = `
-[ ] todo
-[x] done
-`
-  expect(getNodes(text)).toMatchSnapshot()
-})
-
-test('parses nested todo list items', () => {
-  const text = `
-[ ] todo
-   [ ] nested
-   [ ] deep
-`
-  expect(getNodes(text)).toMatchSnapshot()
-})
-
-test('parses double nested todo list items', () => {
-  const text = `
-[x] checked
-   [ ] empty
-   [x] checked
-
-[ ] three
-`
-  expect(getNodes(text)).toMatchSnapshot()
-})
-
-test('parses todo list items with marks', () => {
-  const text = `
- [x] ~~done~~
- [x] more **done**
-`
-  expect(getNodes(text)).toMatchSnapshot()
-})
-
 test('parses ``` code fences', () => {
   const text = `
 \`\`\`
@@ -417,7 +381,7 @@ test('parses link with percent symbol', () => {
   expect(getNodes(text)).toMatchSnapshot()
 })
 
-test('ignores empty link', () => {
+test('parses empty link', () => {
   const text = `[empty]()`
   expect(getNodes(text)).toMatchSnapshot()
 })
