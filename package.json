@@ -1,5 +1,5 @@
 {
-  "name": "slate-md-serializer",
+  "name": "slate-markdown-serializer",
   "version": "5.2.2",
   "description": "",
   "main": "lib/renderer.js",
@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tommoor/slate-md-serializer.git"
+    "url": "git://github.com/scottge/slate-markdown-serializer.git"
   },
   "peerDependencies": {
     "immutable": ">=3.0.0",
