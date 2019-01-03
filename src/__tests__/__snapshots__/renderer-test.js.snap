@@ -29,7 +29,7 @@ Array [
 ]
 `;
 
-exports[`code is not greedy about newlines 1`] = `
+exports[`parses code followed by newlines 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -58,24 +58,6 @@ Array [
           Object {
             "marks": Array [],
             "object": "leaf",
-            "text": "",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
             "text": "const hello = 'world';
 function() {
   return hello;
@@ -87,24 +69,6 @@ function() {
     ],
     "object": "block",
     "type": "code",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
   },
   Object {
     "data": Object {},
@@ -226,24 +190,6 @@ Array [
             "marks": Array [],
             "object": "leaf",
             "text": "first paragraph",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "",
           },
         ],
         "object": "text",
@@ -479,7 +425,7 @@ Array [
 ]
 `;
 
-exports[`headings are not greedy about newlines 1`] = `
+exports[`parses headings followed by newlines 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -624,83 +570,6 @@ Array [
             ],
             "object": "leaf",
             "text": "this is italic too",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`maintains multiple empty paragraphs 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "This is the first sentance",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "Two empty paragraphs above",
           },
         ],
         "object": "text",
@@ -1215,24 +1084,6 @@ Array [
     ],
     "object": "block",
     "type": "horizontal-rule",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
   },
   Object {
     "data": Object {},
@@ -2362,7 +2213,7 @@ Array [
 ]
 `;
 
-exports[`parses quote followed by list with quote (outline/#723) 1`] = `
+exports[`parses quote followed by list with quote 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -2859,6 +2710,30 @@ Array [
 ]
 `;
 
+exports[`parses one paragraph 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "This is the first sentance
+This is the second sentance",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
 exports[`parses two paragraphs 1`] = `
 Array [
   Object {
@@ -2929,24 +2804,6 @@ Array [
           Object {
             "marks": Array [],
             "object": "leaf",
-            "text": "",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
             "text": "This is the second sentance",
           },
         ],
@@ -2982,7 +2839,7 @@ Array [
 ]
 `;
 
-exports[`quote is not greedy about newlines 1`] = `
+exports[`parses quote followed by newlines 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -3001,24 +2858,6 @@ Array [
     ],
     "object": "block",
     "type": "block-quote",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
   },
   Object {
     "data": Object {},
@@ -3070,24 +2909,6 @@ Array [
           Object {
             "marks": Array [],
             "object": "leaf",
-            "text": "",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
             "text": "this is a different quote",
           },
         ],
@@ -3100,7 +2921,7 @@ Array [
 ]
 `;
 
-exports[`tables are not greedy about newlines 1`] = `
+exports[`parses tables followed by newlines 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -3245,24 +3066,6 @@ Array [
     ],
     "object": "block",
     "type": "table",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
   },
   Object {
     "data": Object {},

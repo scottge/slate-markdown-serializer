@@ -15,7 +15,7 @@ test('parses paragraph', () => {
   expect(getNodes(text)).toMatchSnapshot()
 })
 
-test('parses two paragraphs', () => {
+test('parses one paragraph', () => {
   const text = `
 This is the first sentance
 This is the second sentance
@@ -32,12 +32,12 @@ This is the second sentance
   expect(getNodes(text)).toMatchSnapshot()
 })
 
-test('maintains multiple empty paragraphs', () => {
+test('parses two paragraphs', () => {
   const text = `
 This is the first sentance
 
 
-Two empty paragraphs above
+This is the second sentance
 `
   expect(getNodes(text)).toMatchSnapshot()
 })
@@ -72,7 +72,7 @@ test('parses heading6', () => {
   expect(output.document.nodes).toMatchSnapshot()
 })
 
-test('headings are not greedy about newlines', () => {
+test('parses headings followed by newlines', () => {
   const text = `
 a paragraph
 
@@ -141,7 +141,7 @@ test('parses quote', () => {
   expect(getNodes(text)).toMatchSnapshot()
 })
 
-test('parses quote followed by list with quote (outline/#723)', () => {
+test('parses quote followed by list with quote', () => {
   const text = `
 > this is a quote
 1. > this is a list item
@@ -158,7 +158,7 @@ test('quotes do not get combined', () => {
   expect(getNodes(text)).toMatchSnapshot()
 })
 
-test('quote is not greedy about newlines', () => {
+test('parses quote followed by newlines', () => {
   const text = `
 > this is a quote
 
@@ -259,7 +259,7 @@ test('parses tables', () => {
   expect(getNodes(text)).toMatchSnapshot()
 })
 
-test('tables are not greedy about newlines', () => {
+test('parses tables followed by newlines', () => {
   const text = `
 | Tables   |      Are      |  Cool |
 |----------|:-------------:|------:|
@@ -344,7 +344,7 @@ function() {
   expect(rendered).toMatchSnapshot()
 })
 
-test('code is not greedy about newlines', () => {
+test('parses code followed by newlines', () => {
   const text = `
 one sentance
 
