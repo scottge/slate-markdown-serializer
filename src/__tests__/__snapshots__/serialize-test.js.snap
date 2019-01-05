@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bold mark 1`] = `"**this is bold**"`;
+
+exports[`code mark 1`] = `"\`const foo = 123;\`"`;
+
+exports[`code mark with escaped characters 1`] = `"\`<script>alert('foo')</script>\`"`;
+
+exports[`deleted mark 1`] = `"~~this is strikethrough~~"`;
+
+exports[`inserted mark 1`] = `"++inserted text++"`;
+
+exports[`italic mark 1`] = `"_this is italic_ _this is italic too_"`;
+
+exports[`serializes \`\`\` code fences 1`] = `
+"\`\`\`
+const hello = 'world';
+function() {
+  return hello;
+}
+\`\`\`"
+`;
+
+exports[`serializes \`\`\` code fences with language 1`] = `
+"\`\`\`javascript
+const hello = 'world';
+function() {
+  return hello;
+}
+\`\`\`"
+`;
+
+exports[`serializes ~~~ code fences 1`] = `
+"\`\`\`
+const hello = 'world';
+function() {
+  return hello;
+}
+\`\`\`"
+`;
+
+exports[`serializes code followed by newlines 1`] = `
+"one sentance
+
+\`\`\`
+const hello = 'world';
+function() {
+  return hello;
+}
+\`\`\`
+
+two sentance"
+`;
+
+exports[`serializes empty link 1`] = `"[empty]()"`;
+
+exports[`serializes empty string 1`] = `""`;
+
+exports[`serializes escaped blocks 1`] = `"\\\\# text"`;
+
+exports[`serializes escaped blocks 2`] = `"\\\\- text"`;
+
+exports[`serializes escaped blocks 3`] = `"\\\\* text"`;
+
+exports[`serializes escaped marks 1`] = `"this is \\\\*\\\\*not bold\\\\*\\\\*"`;
+
+exports[`serializes escaped marks 2`] = `"this is \\\\*not italic\\\\*"`;
+
+exports[`serializes escaped marks 3`] = `"this is \\\\[not\\\\]\\\\(a link\\\\)"`;
+
+exports[`serializes escaped marks 4`] = `"this is \\\\!\\\\[not\\\\]\\\\(an image\\\\)"`;
+
+exports[`serializes hashtag 1`] = `"this is a #hashtag example"`;
+
+exports[`serializes hashtag ignoring dash 1`] = `"dash should end #hashtag\\\\-dash"`;
+
+exports[`serializes heading1 1`] = `"# Heading"`;
+
+exports[`serializes heading2 1`] = `"## Heading"`;
+
+exports[`serializes heading3 1`] = `"### Heading"`;
+
+exports[`serializes heading4 1`] = `"#### Heading"`;
+
+exports[`serializes heading5 1`] = `"##### Heading"`;
+
+exports[`serializes heading6 1`] = `"###### Heading"`;
+
+exports[`serializes headings followed by newlines 1`] = `
+"a paragraph
+
+## Heading
+
+another paragraph"
+`;
+
+exports[`serializes horizontal rule 1`] = `
+"---
+
+a paragraph"
+`;
+
+exports[`serializes image 1`] = `"![example](http://example.com/logo.png)"`;
+
+exports[`serializes image with title 1`] = `"![example](http://example.com/logo.png \\"image%20title\\")"`;
+
+exports[`serializes indented code blocks 1`] = `
+"\`\`\`
+const hello = 'world';
+function() {
+  return hello;
+}
+\`\`\`"
+`;
+
+exports[`serializes indented list items 1`] = `
+"* one
+* two"
+`;
+
+exports[`serializes link 1`] = `"[google](http://google.com)"`;
+
+exports[`serializes link with encoded characters 1`] = `"[kibana](https://example.com/app/kibana#/discover?_g=%28refreshInterval:%28%27$$hashKey%27:%27object:1596%27,display:%2710%20seconds%27,pause:!f,section:1,value:10000%29,time:%28from:now-15m,mode:quick,to:now%29%29&_a=%28columns:!%28metadata.step,message,metadata.attempt_f,metadata.tries_f,metadata.error_class,metadata.url%29,index:%27logs-%27,interval:auto,query:%28query_string:%28analyze_wildcard:!t,query:%27metadata.at:%20Stepper*%27%29%29,sort:!%28time,desc%29%29)"`;
+
+exports[`serializes link with percent symbol 1`] = `"[kibana](https://example.com/app/kibana#/visualize/edit/Requests-%)"`;
+
+exports[`serializes link within mark 1`] = `"[**google**](http://google.com)"`;
+
+exports[`serializes list items 1`] = `
+"* one
+* two"
+`;
+
+exports[`serializes list items with marks 1`] = `
+"* one **bold**
+* _italic_ two"
+`;
+
+exports[`serializes list surrounded by paragraphs 1`] = `
+"first paragraph
+
+* list
+
+second paragraph"
+`;
+
+exports[`serializes mixed list items 1`] = `
+"1. list
+
+* another
+
+1. different"
+`;
+
+exports[`serializes nested list items 1`] = `
+"* one
+* two
+  * nested
+
+next para"
+`;
+
+exports[`serializes one paragraph 1`] = `
+"This is the first sentance
+This is the second sentance"
+`;
+
+exports[`serializes ordered list items 1`] = `
+"1. one
+2. two"
+`;
+
+exports[`serializes ordered list items with different numbers 1`] = `
+"1. one
+2. two
+3. three"
+`;
+
+exports[`serializes ordered list items with marks 1`] = `
+"1. one **bold**
+2. _italic_ two"
+`;
+
+exports[`serializes paragraph 1`] = `"This is just a sentance"`;
+
+exports[`serializes quote 1`] = `"> this is a quote"`;
+
+exports[`serializes quote followed by list with quote 1`] = `
+"> this is a quote
+
+1. > this is a list item"
+`;
+
+exports[`serializes quote followed by newlines 1`] = `
+"> this is a quote
+
+this is a paragraph"
+`;
+
+exports[`serializes quotes separated by newlines 1`] = `
+"> this is a quote
+
+> this is a different quote"
+`;
+
+exports[`serializes tables 1`] = `
+"| Tables | Are | Cool |
+| --- |:---:| ---:|
+| col 1 is | left\\\\-aligned | $1600 |
+| col 2 is | centered | $12 |
+| col 3 is | right\\\\-aligned | $1 |"
+`;
+
+exports[`serializes tables followed by newlines 1`] = `
+"| Tables | Are | Cool |
+| --- |:---:| ---:|
+| col 1 is | left\\\\-aligned | $1600 |
+
+a new paragraph"
+`;
+
+exports[`serializes two paragraphs 1`] = `
+"This is the first sentance
+
+This is the second sentance"
+`;
+
+exports[`serializes two paragraphs seperated by multiple blank lines 1`] = `
+"This is the first sentance
+
+This is the second sentance"
+`;
+
+exports[`serializes whitespace string 1`] = `""`;
+
+exports[`seserializes \`\`\` code fences with escaped characters 1`] = `
+"\`\`\`
+const hello = 'world';
+function() {
+  return hello;
+}
+\`\`\`"
+`;
+
+exports[`underlined mark 1`] = `"__underlined text__"`;

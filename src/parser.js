@@ -848,6 +848,11 @@ Renderer.prototype.tablecell = function(childNode, flags) {
 // span level renderer
 Renderer.prototype.underlined = function(childNode) {
   return childNode.map(node => {
+    if (node.type === "link") {
+      this.underlined(node.nodes[0].leaves)
+      return node
+    }
+
     if (node.marks) {
       node.marks.push({ type: 'underlined' })
     } else {
@@ -859,6 +864,11 @@ Renderer.prototype.underlined = function(childNode) {
 
 Renderer.prototype.strong = function(childNode) {
   return childNode.map(node => {
+    if (node.type === "link") {
+      this.strong(node.nodes[0].leaves)
+      return node
+    }
+
     if (node.marks) {
       node.marks.push({ type: 'bold' })
     } else {
@@ -870,6 +880,11 @@ Renderer.prototype.strong = function(childNode) {
 
 Renderer.prototype.em = function(childNode) {
   return childNode.map(node => {
+    if (node.type === "link") {
+      this.em(node.nodes[0].leaves)
+      return node
+    }
+
     if (node.marks) {
       node.marks.push({ type: 'italic' })
     } else {
@@ -894,6 +909,11 @@ Renderer.prototype.br = function() {
 
 Renderer.prototype.del = function(childNode) {
   return childNode.map(node => {
+    if (node.type === "link") {
+      this.del(node.nodes[0].leaves)
+      return node
+    }
+
     if (node.marks) {
       node.marks.push({ type: 'deleted' })
     } else {
@@ -905,6 +925,11 @@ Renderer.prototype.del = function(childNode) {
 
 Renderer.prototype.ins = function(childNode) {
   return childNode.map(node => {
+    if (node.type === "link") {
+      this.ins(node.nodes[0].leaves)
+      return node
+    }
+
     if (node.marks) {
       node.marks.push({ type: 'inserted' })
     } else {

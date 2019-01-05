@@ -1,9 +1,6 @@
-[![npm version](https://badge.fury.io/js/slate-md-serializer.svg)](https://badge.fury.io/js/slate-md-serializer) [![CircleCI](https://circleci.com/gh/tommoor/slate-md-serializer.svg?style=svg)](https://circleci.com/gh/tommoor/slate-md-serializer)
-
 # Slate Markdown Serializer
 
 A Markdown serializer for the [Slate Editor](http://slatejs.org). Requires Slate 0.32+.
-
 
 ## renderMark
 
@@ -82,3 +79,38 @@ function renderNode(props) {
   }
 };
 ```
+
+## Difference from slate-md-serializer
+
+The project is forked from @tommoor's [slate-md-serializer](https://github.com/tommoor/slate-md-serializer).  It fixes the following issues and by-design features in @tommoor's, so that the markdown interpretation aligns better with the markdown specification.
+
+### 1. Parsing paragraphs
+
+```
+First sentance
+
+Second sentance
+```
+
+In tommoor's version this is parsed into three paragraphs:
+
+First sentance
+
+<p>&nbsp;</p>
+
+Second sentance
+
+In my package, this is parsed into two paragraphs:
+
+First sentance
+
+Second sentance
+
+
+### 2. Parsing link within mark
+
+`**[example](http://example.com/logo.png)**`
+
+In tommoor's version, this is parsed as [example](http://example.com/logo.png).  The mark is lost.  In my package, this is parsed as [**example**](http://example.com/logo.png). The mark is preserved on the link text.
+
+

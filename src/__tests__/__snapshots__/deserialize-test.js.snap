@@ -116,328 +116,7 @@ Array [
 ]
 `;
 
-exports[`does not add extra paragraphs around lists 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "first paragraph",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "data": Object {},
-        "isVoid": false,
-        "nodes": Array [
-          Object {
-            "data": Object {},
-            "isVoid": false,
-            "nodes": Array [
-              Object {
-                "leaves": Array [
-                  Object {
-                    "marks": Array [],
-                    "object": "leaf",
-                    "text": "list",
-                  },
-                ],
-                "object": "text",
-              },
-            ],
-            "object": "block",
-            "type": "paragraph",
-          },
-        ],
-        "object": "block",
-        "type": "list-item",
-      },
-    ],
-    "object": "block",
-    "type": "bulleted-list",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "second paragraph",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`does not escape characters inside of code blocks 1`] = `
-"\`\`\`
-const hello = 'world';
-function() {
-  return hello;
-}
-\`\`\`"
-`;
-
-exports[`does not escape characters inside of code marks 1`] = `"\`<script>alert('foo')</script>\`"`;
-
-exports[`handles escaped blocks 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "# text",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`handles escaped blocks 2`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "- text",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`handles escaped blocks 3`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "* text",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`handles escaped marks 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "this is **not bold**",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`handles escaped marks 2`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "this is *not italic*",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`handles escaped marks 3`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "this is [not](a link)",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`handles escaped marks 4`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "this is ![not](an image)",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`inserted mark 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [
-              Object {
-                "data": Object {},
-                "object": "mark",
-                "type": "inserted",
-              },
-            ],
-            "object": "leaf",
-            "text": "inserted text",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`italic mark 1`] = `
-Array [
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [
-              Object {
-                "data": Object {},
-                "object": "mark",
-                "type": "italic",
-              },
-            ],
-            "object": "leaf",
-            "text": "this is italic",
-          },
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": " ",
-          },
-          Object {
-            "marks": Array [
-              Object {
-                "data": Object {},
-                "object": "mark",
-                "type": "italic",
-              },
-            ],
-            "object": "leaf",
-            "text": "this is italic too",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-]
-`;
-
-exports[`parses \`\`\` code fences 1`] = `
+exports[`deserializes \`\`\` code fences 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -463,7 +142,7 @@ function() {
 ]
 `;
 
-exports[`parses \`\`\` code fences with language 1`] = `
+exports[`deserializes \`\`\` code fences with language 1`] = `
 Array [
   Object {
     "data": Object {
@@ -491,7 +170,7 @@ function() {
 ]
 `;
 
-exports[`parses ~~~ code fences 1`] = `
+exports[`deserializes ~~~ code fences 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -517,7 +196,7 @@ function() {
 ]
 `;
 
-exports[`parses code followed by newlines 1`] = `
+exports[`deserializes code followed by newlines 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -579,7 +258,7 @@ function() {
 ]
 `;
 
-exports[`parses empty link 1`] = `
+exports[`deserializes empty link 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -632,7 +311,7 @@ Array [
 ]
 `;
 
-exports[`parses empty string 1`] = `
+exports[`deserializes empty string 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -655,7 +334,168 @@ Array [
 ]
 `;
 
-exports[`parses hashtag 1`] = `
+exports[`deserializes escaped blocks 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "# text",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`deserializes escaped blocks 2`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "- text",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`deserializes escaped blocks 3`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "* text",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`deserializes escaped marks 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "this is **not bold**",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`deserializes escaped marks 2`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "this is *not italic*",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`deserializes escaped marks 3`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "this is [not](a link)",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`deserializes escaped marks 4`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "this is ![not](an image)",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`deserializes hashtag 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -706,7 +546,7 @@ Array [
 ]
 `;
 
-exports[`parses hashtag ignoring dash 1`] = `
+exports[`deserializes hashtag ignoring dash 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -757,7 +597,7 @@ Array [
 ]
 `;
 
-exports[`parses heading1 1`] = `
+exports[`deserializes heading1 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -780,7 +620,7 @@ Array [
 ]
 `;
 
-exports[`parses heading2 1`] = `
+exports[`deserializes heading2 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -803,7 +643,7 @@ Array [
 ]
 `;
 
-exports[`parses heading3 1`] = `
+exports[`deserializes heading3 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -826,7 +666,7 @@ Array [
 ]
 `;
 
-exports[`parses heading4 1`] = `
+exports[`deserializes heading4 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -849,7 +689,7 @@ Array [
 ]
 `;
 
-exports[`parses heading5 1`] = `
+exports[`deserializes heading5 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -872,7 +712,7 @@ Array [
 ]
 `;
 
-exports[`parses heading6 1`] = `
+exports[`deserializes heading6 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -895,7 +735,7 @@ Array [
 ]
 `;
 
-exports[`parses headings followed by newlines 1`] = `
+exports[`deserializes headings followed by newlines 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -954,7 +794,7 @@ Array [
 ]
 `;
 
-exports[`parses horizontal rule 1`] = `
+exports[`deserializes horizontal rule 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -995,7 +835,7 @@ Array [
 ]
 `;
 
-exports[`parses image 1`] = `
+exports[`deserializes image 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1029,7 +869,42 @@ Array [
 ]
 `;
 
-exports[`parses indented code blocks 1`] = `
+exports[`deserializes image with title 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "data": Object {
+          "alt": "example",
+          "src": "http://example.com/logo.png",
+          "title": "image title",
+        },
+        "isVoid": true,
+        "nodes": Array [
+          Object {
+            "leaves": Array [
+              Object {
+                "marks": Array [],
+                "object": "leaf",
+                "text": "",
+              },
+            ],
+            "object": "text",
+          },
+        ],
+        "object": "block",
+        "type": "image",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`deserializes indented code blocks 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1055,7 +930,7 @@ function() {
 ]
 `;
 
-exports[`parses indented list items 1`] = `
+exports[`deserializes indented list items 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1120,7 +995,7 @@ Array [
 ]
 `;
 
-exports[`parses link 1`] = `
+exports[`deserializes link 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1173,7 +1048,7 @@ Array [
 ]
 `;
 
-exports[`parses link with encoded characters 1`] = `
+exports[`deserializes link with encoded characters 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1226,7 +1101,7 @@ Array [
 ]
 `;
 
-exports[`parses link with percent symbol 1`] = `
+exports[`deserializes link with percent symbol 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1279,7 +1154,7 @@ Array [
 ]
 `;
 
-exports[`parses link within mark 1`] = `
+exports[`deserializes link within mark 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1304,7 +1179,13 @@ Array [
           Object {
             "leaves": Array [
               Object {
-                "marks": Array [],
+                "marks": Array [
+                  Object {
+                    "data": Object {},
+                    "object": "mark",
+                    "type": "bold",
+                  },
+                ],
                 "object": "leaf",
                 "text": "google",
               },
@@ -1332,7 +1213,7 @@ Array [
 ]
 `;
 
-exports[`parses list items 1`] = `
+exports[`deserializes list items 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1397,7 +1278,7 @@ Array [
 ]
 `;
 
-exports[`parses list items with marks 1`] = `
+exports[`deserializes list items with marks 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1484,7 +1365,82 @@ Array [
 ]
 `;
 
-exports[`parses mixed list items 1`] = `
+exports[`deserializes list surrounded by paragraphs 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "first paragraph",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "data": Object {},
+        "isVoid": false,
+        "nodes": Array [
+          Object {
+            "data": Object {},
+            "isVoid": false,
+            "nodes": Array [
+              Object {
+                "leaves": Array [
+                  Object {
+                    "marks": Array [],
+                    "object": "leaf",
+                    "text": "list",
+                  },
+                ],
+                "object": "text",
+              },
+            ],
+            "object": "block",
+            "type": "paragraph",
+          },
+        ],
+        "object": "block",
+        "type": "list-item",
+      },
+    ],
+    "object": "block",
+    "type": "bulleted-list",
+  },
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "second paragraph",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
+exports[`deserializes mixed list items 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1591,7 +1547,7 @@ Array [
 ]
 `;
 
-exports[`parses nested list items 1`] = `
+exports[`deserializes nested list items 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1708,7 +1664,7 @@ Array [
 ]
 `;
 
-exports[`parses one paragraph 1`] = `
+exports[`deserializes one paragraph 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1732,7 +1688,7 @@ This is the second sentance",
 ]
 `;
 
-exports[`parses ordered list items 1`] = `
+exports[`deserializes ordered list items 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1797,7 +1753,7 @@ Array [
 ]
 `;
 
-exports[`parses ordered list items with different numbers 1`] = `
+exports[`deserializes ordered list items with different numbers 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1888,7 +1844,7 @@ Array [
 ]
 `;
 
-exports[`parses ordered list items with marks 1`] = `
+exports[`deserializes ordered list items with marks 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1975,7 +1931,7 @@ Array [
 ]
 `;
 
-exports[`parses paragraph 1`] = `
+exports[`deserializes paragraph 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -1998,7 +1954,7 @@ Array [
 ]
 `;
 
-exports[`parses quote 1`] = `
+exports[`deserializes quote 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -2021,7 +1977,7 @@ Array [
 ]
 `;
 
-exports[`parses quote followed by list with quote 1`] = `
+exports[`deserializes quote followed by list with quote 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -2078,7 +2034,7 @@ Array [
 ]
 `;
 
-exports[`parses quote followed by newlines 1`] = `
+exports[`deserializes quote followed by newlines 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -2119,7 +2075,48 @@ Array [
 ]
 `;
 
-exports[`parses tables 1`] = `
+exports[`deserializes quotes separated by newlines 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "this is a quote",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "block-quote",
+  },
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "this is a different quote",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "block-quote",
+  },
+]
+`;
+
+exports[`deserializes tables 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -2404,7 +2401,7 @@ Array [
 ]
 `;
 
-exports[`parses tables followed by newlines 1`] = `
+exports[`deserializes tables followed by newlines 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -2571,7 +2568,7 @@ Array [
 ]
 `;
 
-exports[`parses two paragraphs 1`] = `
+exports[`deserializes two paragraphs 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -2612,7 +2609,7 @@ Array [
 ]
 `;
 
-exports[`parses two paragraphs seperated by multiple blank lines 1`] = `
+exports[`deserializes two paragraphs seperated by multiple blank lines 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -2653,7 +2650,7 @@ Array [
 ]
 `;
 
-exports[`parses whitespace string 1`] = `
+exports[`deserializes whitespace string 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -2676,7 +2673,7 @@ Array [
 ]
 `;
 
-exports[`quotes do not get combined 1`] = `
+exports[`inserted mark 1`] = `
 Array [
   Object {
     "data": Object {},
@@ -2685,17 +2682,28 @@ Array [
       Object {
         "leaves": Array [
           Object {
-            "marks": Array [],
+            "marks": Array [
+              Object {
+                "data": Object {},
+                "object": "mark",
+                "type": "inserted",
+              },
+            ],
             "object": "leaf",
-            "text": "this is a quote",
+            "text": "inserted text",
           },
         ],
         "object": "text",
       },
     ],
     "object": "block",
-    "type": "block-quote",
+    "type": "paragraph",
   },
+]
+`;
+
+exports[`italic mark 1`] = `
+Array [
   Object {
     "data": Object {},
     "isVoid": false,
@@ -2703,16 +2711,38 @@ Array [
       Object {
         "leaves": Array [
           Object {
+            "marks": Array [
+              Object {
+                "data": Object {},
+                "object": "mark",
+                "type": "italic",
+              },
+            ],
+            "object": "leaf",
+            "text": "this is italic",
+          },
+          Object {
             "marks": Array [],
             "object": "leaf",
-            "text": "this is a different quote",
+            "text": " ",
+          },
+          Object {
+            "marks": Array [
+              Object {
+                "data": Object {},
+                "object": "mark",
+                "type": "italic",
+              },
+            ],
+            "object": "leaf",
+            "text": "this is italic too",
           },
         ],
         "object": "text",
       },
     ],
     "object": "block",
-    "type": "block-quote",
+    "type": "paragraph",
   },
 ]
 `;
